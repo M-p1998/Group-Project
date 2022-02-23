@@ -25,10 +25,6 @@ public class UserController {
 	@Autowired
 	private UserValidator uValidator;
 	
-	@GetMapping("/")
-	public String home() {
-		return "/meal/home.jsp";
-	}
 	
 	@GetMapping("/register")
 	public String registration(@ModelAttribute("registration") User user) {

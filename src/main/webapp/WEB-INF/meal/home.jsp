@@ -9,9 +9,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="/css/home.css" rel="stylesheet" type="text/css">
 <title>Home</title>
 </head>
 <body>
 	<a href="">Contact us</a> | <a href="">Sign up</a> | <a href="">Sign in</a>
+	
+	<div class="container">
+	<div class="row text-center">
+		<h3>
+			Feeling hungry?
+		</h3>
+		<a href=""><button id="meal">Get a random meal</button></a>
+	</div>
+	<div id="change_meal" class=""></div>
+</div>
+	
+	<script src="/js/home.js"></script>
 </body>
 </html>

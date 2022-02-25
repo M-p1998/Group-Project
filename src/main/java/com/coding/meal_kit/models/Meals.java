@@ -12,3 +12,4 @@ public class Meals {
 	@JsonProperty("meals")
 	List<Meal> meals;
 }
+

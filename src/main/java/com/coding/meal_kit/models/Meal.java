@@ -83,4 +83,5 @@ public class Meal {
 	private String strImageSource;
 	private String strCreativeCommonsConfirmed;
 	private Date dateModified;
+	
 }

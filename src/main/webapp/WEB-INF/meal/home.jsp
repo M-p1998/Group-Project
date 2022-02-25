@@ -20,7 +20,7 @@
 		<h3>
 			Feeling hungry?
 		</h3>
-		<a href=""><button id="meal">Get a random meal</button></a>
+		<a href="/details/${getOne.id}"><button id="meal">Get a random meal</button></a>
 	</div>
 	<div id="change_meal" class=""></div>
 </div>

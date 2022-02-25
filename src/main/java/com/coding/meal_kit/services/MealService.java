@@ -26,6 +26,7 @@ public class MealService {
 	  = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 	
 	public final String countryUrl = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
+	public final String byCountryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
 
 	public Areas getCountryList() {
 		Areas areas = restTemplate.getForObject(countryUrl, Areas.class);
@@ -45,24 +46,23 @@ public class MealService {
 		return meal;
 	}
 //	
-//	public Meals getMealbyID(String mealID) {
-//		//
-//		Meals meal = restTemplate
-//				  .getForObject(mealIDUrl+mealID, Meals.class);
-//		String videoID = meal.getMeals().get(0).getStrYoutube();
-//		int pos = videoID.indexOf("=");
-//		videoID = videoID.substring(pos+1);
-//		meal.getMeals().get(0).setStrYoutubeVideoID(videoID);
-//		return meal;
-//	}
-//	
+	public Meals getMealbyID(String mealID) {
+		//
+		Meals meal = restTemplate
+				  .getForObject(mealIDUrl+mealID, Meals.class);
+		String videoID = meal.getMeals().get(0).getStrYoutube();
+		int pos = videoID.indexOf("=");
+		videoID = videoID.substring(pos+1);
+		meal.getMeals().get(0).setStrYoutubeVideoID(videoID);
+		return meal;
+	}
 	
 	//Country API
 	
-	public CountryMeals getMealbyCountry(String countryURL) {
+	public CountryMeals getMealbyCountry(String country) {
+		System.out.println(byCountryURL+country);
 		CountryMeals meal = restTemplate
-				  .getForObject(countryURL, CountryMeals.class);
-	
+				  .getForObject(byCountryURL+country, CountryMeals.class);
 		return meal;
 	}
 

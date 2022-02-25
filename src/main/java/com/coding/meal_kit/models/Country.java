@@ -6,10 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
+
+
 @Data
-public class Meals {
+public class Country {
 
 	@JsonProperty("meals")
-	List<Meal> meals;
+	List<Country> mealsByCountry;
 }
+
+
+
+
 

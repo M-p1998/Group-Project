@@ -14,13 +14,17 @@
 
 <div class="col">
 
-		<c:forEach items="${apiData.areas.meals}" var="area">
-		<%-- <h1>${area.strMeal}</h1>
-		${area.strMealThumb}
-		${area.idMeal}
-		 --%>
-	
-		</c:forEach>
+<c:forEach items="${apiData.meals}" var="meal">
+<h1>${meal.strMeal}</h1>
+		<img src="${meal.strMealThumb}">
+		<a href="/getMeal/${meal.idMeal}">See Meal</a>
+</c:forEach>
+		
+		
+		
+		
+		
+
 
 		
 </div>

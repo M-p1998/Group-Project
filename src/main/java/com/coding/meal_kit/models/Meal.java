@@ -13,6 +13,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @Entity
 @Data
 @Builder
@@ -35,6 +37,7 @@ public class Meal {
 	private String strInstructions;
 	private String strMealThumb;
 	private String strTags;
+	private String strYoutubeVideoID;
 	private String strYoutube;
 	private String strIngredient1;
 	private String strIngredient2;
@@ -80,7 +83,4 @@ public class Meal {
 	private String strImageSource;
 	private String strCreativeCommonsConfirmed;
 	private Date dateModified;
-	
-	
-	
 }

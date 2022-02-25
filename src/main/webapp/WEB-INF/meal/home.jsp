@@ -25,6 +25,7 @@
 	<c:forEach items="${apiData.meals}" var="meal">
 	<div class="row">
 	${meal.strMeal}
+	
 	</div>
 	</c:forEach>
 	<div id="change_meal" class=""></div>

@@ -1,5 +1,6 @@
 package com.coding.meal_kit.controllers;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -48,14 +49,6 @@ public class MealController {
 		return "/meal/home.jsp";
 	}
 
-//	@GetMapping("/")
-//	public String home(Model model) {
-//		//Meals meals = mealService.getRandomMeal();
-//		Meals meals = mealService.getMealbyID("52772");
-//		System.out.println(meals.toString());
-//		model.addAttribute("apiData", meals);
-//		return "/meal/home.jsp";
-//	}
 
 	@GetMapping("/details")
 	public String details() {
@@ -69,5 +62,6 @@ public class MealController {
 		model.addAttribute("apiData", meals);
 		return "/meal/searchpage.jsp";
 	}
+
 
 }

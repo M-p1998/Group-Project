@@ -5,6 +5,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import com.coding.meal_kit.validators.UserValidator;
 
 @Controller
 public class UserController {
+	private boolean login_error = false;	
 	
 	@Autowired 
 	private UserService uService;
@@ -28,11 +30,9 @@ public class UserController {
 	
 	@GetMapping("/register")
 	public String registration(@ModelAttribute("registration") User user) {
-		
 		return "/user/register.jsp";
 	}
 	
-
 	@PostMapping("/register")
 	public String register_user(@Valid @ModelAttribute("registration") User user, BindingResult results,  HttpSession session) {
 		uValidator.validate(user, results);
@@ -47,7 +47,8 @@ public class UserController {
 	}
 	
 	@GetMapping("/login")
-	public String login() {
+	public String login(Model model) {
+		model.addAttribute("login", login_error);
 		return "/user/login.jsp";
 	}
 	
@@ -60,6 +61,7 @@ public class UserController {
 			
 		}else {
 			redirectAttr.addFlashAttribute("error", "Invalid email/password");
+			login_error = true;
 			return "redirect:/login";
 		}
 	}

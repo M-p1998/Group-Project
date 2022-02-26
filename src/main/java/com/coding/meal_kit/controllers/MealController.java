@@ -4,7 +4,6 @@ package com.coding.meal_kit.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,7 +53,11 @@ public class MealController {
 
 
 	@GetMapping("/details")
-	public String details() {
+	public String details(Model model) {
+		Meals meals = mealService.getRandomMeal();
+		// System.out.println(areas.getAreas().toString());
+		model.addAttribute("apiData", meals);
+		model.addAttribute("apiAreas", this.areas);
 		return "/meal/details.jsp";
 	}
 
@@ -65,6 +68,15 @@ public class MealController {
 		model.addAttribute("apiData", meals);
 		return "/meal/searchpage.jsp";
 	}
+	
+	@GetMapping("/search")
+	public String search(@RequestParam("term") String term, 
+			@RequestParam("by") String by, Model model) {
+		System.out.println(">>>");
+		return "/meal/mealsearch.jsp";
+		
+	}
+	
 
 
 }

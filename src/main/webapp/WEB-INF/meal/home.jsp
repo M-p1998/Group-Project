@@ -13,7 +13,18 @@
 <title>Home</title>
 </head>
 <body>
-	<a href="">Contact us</a> | <a href="">Sign up</a> | <a href="">Sign in</a>
+	<a href="">Contact us</a> | <a href="/register">Sign up</a> | <a href="/login">Sign in</a> 
+	<div>
+	<form action="/search" method="get">
+	<input name="term">
+	 <select name="by"> 
+	 <option value="name" >by food name</option>
+	 <option value="ing" >by ingredients</option>
+	</select>
+	<button type= "submit">Search</button>
+	</form>
+	</div>
+	
 	<hr>
 	<div class="container">
 	<div class="row">
@@ -28,6 +39,7 @@
 		</form>
 	</div>
 	
+
 	
 	<div class="row text-center">
 		<h3>
@@ -54,12 +66,7 @@ src="https://www.youtube.com/embed/${meal.strYoutubeVideoID}">
 
 	</div>
 	</c:forEach>
-	<form action="/searchByCountry" method="get">
-	<input name="country">
-	<button type ="submit">SUBMIT</button>
-	</form>
-	
-	<div id="change_meal" class=""></div>
+
 </div>
 	
 	<script src="/js/home.js"></script>

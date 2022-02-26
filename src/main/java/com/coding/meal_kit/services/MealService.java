@@ -27,6 +27,8 @@ public class MealService {
 	
 	public final String countryUrl = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
 	public final String byCountryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
+	public final String byIngredient="https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast";
+	public final String byName="https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata";
 
 	public Areas getCountryList() {
 		Areas areas = restTemplate.getForObject(countryUrl, Areas.class);
@@ -65,5 +67,28 @@ public class MealService {
 				  .getForObject(byCountryURL+country, CountryMeals.class);
 		return meal;
 	}
+	
+	
+	//search By Meal Name
+	
+	public CountryMeals getMealbyName(String name) {
+		System.out.println(byCountryURL+name);
+		CountryMeals meal = restTemplate
+				  .getForObject(byCountryURL+name, CountryMeals.class);
+		return meal;
+	}
+	
+	
+	
+	
+	//Search Bt Ingredients
+	
+	public CountryMeals getMealbyIngredient(String ingredient) {
+		System.out.println(byCountryURL+ingredient);
+		CountryMeals meal = restTemplate
+				  .getForObject(byCountryURL+ingredient, CountryMeals.class);
+		return meal;
+	}
+	
 
 }

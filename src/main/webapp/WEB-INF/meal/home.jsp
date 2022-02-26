@@ -33,7 +33,9 @@
 		<h3>
 			Feeling hungry?
 		</h3>
-		<a href="/"><button id="meal">Get a random meal</button></a>
+
+		<a href="/details/${getOne.id}"><button id="meal">Get a random meal</button></a>
+
 	</div>
 	<c:forEach items="${apiData.meals}" var="meal">
 	<div class="row">

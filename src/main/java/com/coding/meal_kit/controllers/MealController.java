@@ -4,6 +4,7 @@ package com.coding.meal_kit.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +16,10 @@ import com.coding.meal_kit.models.CountryMeals;
 import com.coding.meal_kit.models.Meals;
 import com.coding.meal_kit.services.MealService;
 
+
 @Controller
 public class MealController {
+
 
 	@Autowired
 	private MealService mealService;

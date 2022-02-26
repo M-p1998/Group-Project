@@ -8,10 +8,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>Registration</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
+
+<div class="container">
+		<div class="card">
+			<div class="box" id="card">
+				<div class="card-front">
 	<a href="/login">Already have an account? Sign up</a>
 	<form:form action="/register" method="post" modelAttribute="registration">
 		<p>
@@ -34,8 +40,47 @@
 			<form:errors path="confirm_password" class="text-danger"/>
 			<form:input path="confirm_password" type="password"/>
 		</p>
-		<button>Sign in</button>
+			<input class="btn" type="submit" value="Submit" />
 	</form:form>
+	
+	<input class="btn" type="submit" value="I have an account"
+						onclick="openRegister()" />
+	</div>
+	<div class="card-back">
+	
+		<h2>Log In</h2>
+					<form action="/login" method="post">
+						<p class="text-danger">
+							<c:out value="${error}" />
+						</p>
+						<p>
+							<label>Email:</label> <input name="email" />
+						</p>
+						<p>
+							<label>Password:</label> <input name="password" />
+						</p>
+						<button>Sign up</button>
+					</form>
+	<button class="btn" onclick="openLogin()">I am new here</button>
+					
+	
+	
+	</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		var card = document.getElementById("card");
+		function openRegister() {
+			card.style.transform = "rotateY(-180deg)";
+		}
+		function openLogin() {
+			card.style.transform = "rotateY(0deg)";
+		}
+	</script>
+	
+	
 	
 	<h3>Sign in with social media</h3>
 	<a href="">Facebook</a>

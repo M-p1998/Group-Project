@@ -1,3 +1,0 @@
-INDEX VERSION 1.4+/Users/bridgetmcknight/Desktop/Group-Project/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-841290740.index
-2403072770.index

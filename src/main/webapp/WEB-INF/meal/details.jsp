@@ -10,6 +10,8 @@
 <title>Food Details</title>
 </head>
 <body>
+
+
 	<a href=""><button>Add to favorites</button></a>
 </body>
 </html>
